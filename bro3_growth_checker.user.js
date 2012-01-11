@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name           bro3_growth_checker
+// @version        1.07
 // @namespace      http://blog.livedoor.jp/froo/
 // @include        http://*.3gokushi.jp/user/*
 // @include        http://*.1kibaku.jp/user/*
@@ -9,7 +10,7 @@
 // 公開ページ: http://blog.livedoor.jp/froo/archives/51383261.html
 // 使い方: 君主プロフィールページを表示
 
-var VERSION = "1.06";
+var VERSION = "1.07";
 var LOCAL_STORAGE = "bro3_growth_checker";
 
 var DELIMIT = "#$%";
@@ -45,16 +46,16 @@ var DELIMIT = "#$%";
 	
 	//各値欄取得
 	var fieldPaths = new Array(
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[3]/td[2]', //ランク
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[4]/td[2]', //総合
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[5]/td[2]', //総人口
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[5]/td[4]', //拠点
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[6]/td[2]', //攻撃
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[6]/td[4]', //防御
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[7]/td[2]', //撃破スコア
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[7]/td[4]', //防衛スコア
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[3]/td[4]', //同盟
-		'//*[@id="gray02Wrapper"]//table/tbody/tr[4]/td[4]'  //役職
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[4]/td[3]', //ランク
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[5]/td[2]', //総合
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[6]/td[2]', //総人口
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[6]/td[4]', //拠点
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[7]/td[2]', //攻撃
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[7]/td[4]', //防御
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[8]/td[2]', //撃破スコア
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[8]/td[4]', //防衛スコア
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[4]/td[5]', //同盟
+		'//*[@id="gray02Wrapper"]//table/tbody/tr[5]/td[4]'  //役職
 	);
 	for (var i=0; i<fieldPaths.length; i++) {
 		var targetElem = document.evaluate(fieldPaths[i],
